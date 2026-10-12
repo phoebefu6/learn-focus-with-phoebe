@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Six sessions on attention as a capacity you can protect and train: the three jobs of attention, the wandering mind, why focus fades over an hour, an attention bench that measures you in your browser, the room and the phone, and a focus block you can keep. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Focus with Phoebe">
+<meta property="og:description" content="Attention is three jobs, not one span. Six sessions, one constructed open-plan office, and a go/no-go task that measures your own focus with and without chat banners.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-focus-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-focus-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Focus with Phoebe">
+<meta name="twitter:description" content="Measure your own focus with and without chat banners, in your browser.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-focus-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Focus with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: 1; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(var(--shadow-rgb),.16); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo-deep); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--muted); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,var(--indigo-50)); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .not-this { border: 1px solid var(--hairline); border-left: 4px solid var(--clay); border-radius: var(--radius); background: #fff; padding: 1.1rem 1.3rem; margin-top: 1.2rem; }
+  .not-this h3 { font-size: .95rem; font-weight: 800; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · Mind &amp; Movement</div>
+    <h1>Learn <span class="accent">Focus</span> with Phoebe</h1>
+    <p class="sub">Attention is not a span you were issued; it is three jobs that tire, wander and recover, and the setting around you decides much of how they go. Six sessions on protecting and training it: what attention is and the goldfish number that is not, where the mind goes when it leaves the task, why focus fades over an hour and why the reason is still argued over, a bench that measures your own focus with and without chat banners, the room and the phone, and a focus block you can keep for two weeks. One constructed running case, a data engineer in an open-plan office, and research claims that each carry their status.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="4">4</b><span>steps measured on you</span></div>
+      <div class="stat"><b data-count="157">157</b><span>trials per block</span></div>
+      <div class="stat"><b data-count="200">200</b><span>modelled participants</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The six sessions 🧭 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· from what attention is to a block you keep</span></h2>
+      <p class="plede">The running case is <strong>Tomas, a constructed data engineer</strong> in an open-plan office, team chat open all day, desk facing the walkway to the kitchen. His best work needs forty uninterrupted minutes he rarely gets. Tomas and everyone around him are invented for teaching, and every page says so.</p>
+      <p class="plede"><strong>Not medical advice.</strong> These sessions are about everyday focus at work. They do not diagnose or treat anything. If trouble concentrating is persistent, affects your work or life, or comes with low mood, poor sleep or memory problems, talk to a doctor.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-what-attention-is.html" style="--diff:#34D399">
+        <span class="cicon">🔦</span>
+        <span class="cnum">Session 1 · foundations</span>
+        <h3>What attention is, and what it is not</h3>
+        <p>Alerting, orienting and executive control: three jobs, not one span. The goldfish statistic traced to a source nobody could find, and an attention diary for one working morning.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span></span>
+      </a>
+      <a class="course-card" href="courses/02-when-the-mind-leaves.html" style="--diff:#34D399">
+        <span class="cicon">🎈</span>
+        <span class="cnum">Session 2 · foundations</span>
+        <h3>When the mind leaves the task</h3>
+        <p>Minds wandered in 46.9 percent of 2,250 people's sampled moments. Where they go, how it feels, its costs and its uses, and how to catch it from the outside.</p>
+        <span class="meta"><span class="pill">mind-wandering</span></span>
+      </a>
+      <a class="course-card" href="courses/03-why-focus-fades.html" style="--diff:#FBBF24">
+        <span class="cicon">🕯️</span>
+        <span class="cnum">Session 3 · core</span>
+        <h3>Why focus fades over an hour</h3>
+        <p>The vigilance decrement, three rival explanations, a famous resource theory that failed a 23-lab replication, and attention restoration theory with its debate.</p>
+        <span class="meta"><span class="pill">time on task</span></span>
+      </a>
+      <a class="course-card" href="courses/04-the-attention-bench.html" style="--diff:#F87171">
+        <span class="cicon">⏱️</span>
+        <span class="cnum">Session 4 · bench night</span>
+        <h3>The attention bench</h3>
+        <p>A go/no-go task timed on you: baseline, chat banners, a break, banners muted. Then a modelled pool with an anti-lever and a break button that makes the measure fail.</p>
+        <span class="meta"><span class="pill amber">★ the bench</span></span>
+      </a>
+      <a class="course-card" href="courses/05-the-room-and-the-phone.html" style="--diff:#FBBF24">
+        <span class="cicon">📵</span>
+        <span class="cnum">Session 5 · core</span>
+        <h3>Designing the room and the phone</h3>
+        <p>The phone-on-the-desk finding and the replication that did not find it, a week with notifications off, and a desk and chat setup that defends a block.</p>
+        <span class="meta"><span class="pill">environment design</span></span>
+      </a>
+      <a class="course-card" href="courses/06-a-focus-block-you-keep.html" style="--diff:#FB923C">
+        <span class="cicon">🧱</span>
+        <span class="cnum">Session 6 · deeper</span>
+        <h3>A focus block you can keep</h3>
+        <p>Deep work as a practice rather than a finding, scheduled breaks against self-chosen ones, and a two-week experiment with a stop rule written in advance.</p>
+        <span class="meta"><span class="pill amber">🔒 the practice</span></span>
+      </a>
+    </div>
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>foundations</span>
+      <span><i style="background:#FBBF24"></i>core</span>
+      <span><i style="background:#FB923C"></i>deeper</span>
+      <span><i style="background:#F87171"></i>bench night</span>
+    </div>
+  </section>
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Six stamps means you can name which job of attention is failing, answer the goldfish, read mind-wandering research with its caveats, explain why focus fades and why that is contested, measure yourself without fooling yourself, and design a room, a phone and a block that protect your best hours. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+  <section class="section">
+    <div class="not-this">
+      <h3>What this is not, so you land in the right place 🧭</h3>
+      <table class="clean">
+        <tr><th>If your question is</th><th>Go here instead</th></tr>
+        <tr><td>What does an interruption or a task switch actually cost?</td><td><a href="https://phoebefu6.github.io/learn-time-management-with-phoebe/courses/05-interruptions-and-switching.html">Time Management, Interruptions and switching ↗</a></td></tr>
+        <tr><td>Can AI triage my messages and inbox for me?</td><td><a href="https://phoebefu6.github.io/learn-ai-productivity-with-phoebe/">AI Productivity ↗</a></td></tr>
+        <tr><td>How do I practise noticing a wandering mind and coming back, as meditation?</td><td><a href="https://phoebefu6.github.io/learn-meditation-with-phoebe/courses/04-wandering-mind.html">Meditation, the wandering mind ↗</a></td></tr>
+        <tr><td>I think I may have an attention disorder.</td><td><strong>A doctor</strong>, not a course</td></tr>
+        <tr><td><strong>My attention gets scattered at work and I want to understand it and protect it.</strong></td><td><strong>you are in the right place</strong></td></tr>
+      </table>
+      <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)"><strong>Attention as cognitive science, applied to a working day.</strong> Switching costs, AI triage and meditation practice are taught next door and linked from here rather than repeated.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same idea: change the setting before you blame the person.</p>
+      <div class="path"><b>📱 My phone and chat run my day</b>
+        <a class="pstep" href="courses/05-the-room-and-the-phone.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-attention-bench.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-a-focus-block-you-keep.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">read the phone studies, measure the banners, build the block</span>
+      </div>
+      <div class="path"><b>🕯️ I fade after the first hour</b>
+        <a class="pstep" href="courses/03-why-focus-fades.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-attention-bench.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-a-focus-block-you-keep.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">why it fades, how block length shows, breaks on a schedule</span>
+      </div>
+      <div class="path"><b>🎯 The whole path</b>
+        <a class="pstep" href="courses/01-what-attention-is.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-when-the-mind-leaves.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-why-focus-fades.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-attention-bench.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-the-room-and-the-phone.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-a-focus-block-you-keep.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">from three jobs to a block you keep</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is honest here 🧾</h2>
+      <p class="plede">Attention advice travels with famous numbers, and several do not survive a look at their source. Each claim on these pages carries its status.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>Your reaction time, variability and errors on the bench</td><td><strong>Measured on you</strong> in your browser, kept in this browser only, never sent anywhere; one sitting, not a diagnosis</td></tr>
+      <tr><td>Drift over 3, 10 and 20 minutes, the banner cost, the break</td><td><strong>Modelled</strong> on 200 synthetic participants by a rule printed on the widget; only directions are claimed</td></tr>
+      <tr><td>"Your attention span is shorter than a goldfish's"</td><td><strong>Untraceable.</strong> A marketing report credited a website whose listed sources had no record of the figures. Session 1 traces it</td></tr>
+      <tr><td>"A phone on the desk drains your brain"</td><td><strong>Contested.</strong> A 2017 finding that a pre-registered direct replication did not find. Session 5 teaches the disagreement</td></tr>
+      <tr><td>"Willpower is a resource that runs out"</td><td><strong>Failed a large replication:</strong> 23 labs, 2,141 people, an effect near zero. Session 3</td></tr>
+      <tr><td>"Nature restores attention"</td><td><strong>Some support,</strong> with uncertainty about which aspect of attention and small, varied studies. Session 3</td></tr>
+      <tr><td>Tomas, his team, his chat messages and his calendar</td><td><strong>Constructed,</strong> for teaching</td></tr>
+    </table>
+  </section>
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole path at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+  <footer class="pagefoot">
+    <span>learn-focus-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Neighbours on the shelf: <a href="https://phoebefu6.github.io/learn-meditation-with-phoebe/">Meditation ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-time-management-with-phoebe/">Time Management ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-ai-productivity-with-phoebe/">AI Productivity ↗</a></span>
+  </footer>
+</main>
+<script>
+window.MINDMAP_DATA = {
+ "title": "Getting\nFocused",
+ "centerColor": "#1B3E54",
+ "sessions": [
+  {
+   "label": "What attention\nis, and is not",
+   "href": "courses/01-what-attention-is.html",
+   "color": "#34D399",
+   "concepts": [
+    {
+     "label": "Three jobs, not one span",
+     "href": "courses/01-what-attention-is.html#part-1"
+    },
+    {
+     "label": "The goldfish, traced",
+     "href": "courses/01-what-attention-is.html#part-2"
+    },
+    {
+     "label": "The attention diary",
+     "href": "courses/01-what-attention-is.html#demo-1"
+    }
+   ]
+  },
+  {
+   "label": "When the mind\nleaves the task",
+   "href": "courses/02-when-the-mind-leaves.html",
+   "color": "#34D399",
+   "concepts": [
+    {
+     "label": "Wandering in 46.9%",
+     "href": "courses/02-when-the-mind-leaves.html#part-1"
+    },
+    {
+     "label": "Costs and benefits",
+     "href": "courses/02-when-the-mind-leaves.html#part-2"
+    },
+    {
+     "label": "Catching it from outside",
+     "href": "courses/02-when-the-mind-leaves.html#part-3"
+    }
+   ]
+  },
+  {
+   "label": "Why focus fades\nover an hour",
+   "href": "courses/03-why-focus-fades.html",
+   "color": "#FBBF24",
+   "concepts": [
+    {
+     "label": "The vigilance decrement",
+     "href": "courses/03-why-focus-fades.html#part-1"
+    },
+    {
+     "label": "Why it fades: contested",
+     "href": "courses/03-why-focus-fades.html#part-2"
+    },
+    {
+     "label": "Restoration, debated",
+     "href": "courses/03-why-focus-fades.html#part-3"
+    }
+   ]
+  },
+  {
+   "label": "The attention\nbench",
+   "href": "courses/04-the-attention-bench.html",
+   "color": "#F87171",
+   "concepts": [
+    {
+     "label": "Measured on you",
+     "href": "courses/04-the-attention-bench.html#bench"
+    },
+    {
+     "label": "Banners: anti-lever",
+     "href": "courses/04-the-attention-bench.html#part-3"
+    },
+    {
+     "label": "Speed next to errors",
+     "href": "courses/04-the-attention-bench.html#part-4"
+    }
+   ]
+  },
+  {
+   "label": "The room and\nthe phone",
+   "href": "courses/05-the-room-and-the-phone.html",
+   "color": "#FBBF24",
+   "concepts": [
+    {
+     "label": "Brain drain, replicated?",
+     "href": "courses/05-the-room-and-the-phone.html#part-1"
+    },
+    {
+     "label": "A week without alerts",
+     "href": "courses/05-the-room-and-the-phone.html#part-2"
+    },
+    {
+     "label": "Designing the desk",
+     "href": "courses/05-the-room-and-the-phone.html#part-3"
+    }
+   ]
+  },
+  {
+   "label": "A focus block\nyou can keep",
+   "href": "courses/06-a-focus-block-you-keep.html",
+   "color": "#FB923C",
+   "concepts": [
+    {
+     "label": "Deep work as practice",
+     "href": "courses/06-a-focus-block-you-keep.html#part-1"
+    },
+    {
+     "label": "Breaks on a schedule",
+     "href": "courses/06-a-focus-block-you-keep.html#part-2"
+    },
+    {
+     "label": "Two weeks, a stop rule",
+     "href": "courses/06-a-focus-block-you-keep.html#part-3"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 4 of 6. A sustained-attention go/no-go task in the style of the SART, run on you in the browser: baseline, chat banners, a 2-minute break, banners muted. Mean reaction time, variability, commission and omission errors per block, kept in your browser. Plus a modelled pool of 200 synthetic participants, an anti-lever and a break button.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The attention bench - learn focus with phoebe">
+<meta property="og:description" content="Session 4 of 6. Measure your own sustained attention, with and without banners, then see what block length does on a modelled pool.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-focus-with-phoebe/courses/04-the-attention-bench.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-focus-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The attention bench - learn focus with phoebe">
+<meta name="twitter:description" content="Session 4 of 6. A go/no-go task on you, and a modelled pool with an anti-lever and a break button.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-focus-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 4 · The attention bench - learn focus with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-focus-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Focus with Phoebe · Session 4 of 6</div>
+    <h1>The <span class="accent">attention</span> bench</h1>
+    <p class="sub">Three sessions of reading about attention; tonight it gets measured, on you. The bench runs a sustained-attention task built on the one Ian Robertson and colleagues published in 1997: a stream of digits, one a little over every second, and you press for every digit except 3. It is boring on purpose, because boredom is where sustained attention shows. You run it four ways: plain, with chat banners sliding in, after a two-minute break, and with the banners muted. The page clocks every press and prints your own numbers per block. Then a modelled pool of 200 invented people shows what one short block cannot: how drift grows with time on task, what banners add, and how badly a too-short measurement disagrees with itself.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Bench night</span>
+      <span class="chip audience">A keyboard or a touch screen</span>
+      <span class="chip audience">About 14 minutes of task</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:2">3-10 · How the task works</span>
+      <span class="a3" style="flex:6">10-36 · The bench: on you, then the pool</span>
+      <span class="a4" style="flex:2">36-45 · What it can and cannot say</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Tomas (constructed) has a diary from session 1 and a drift count from session 2. What he does not have is a number taken under controlled conditions: the same task, the same timing, with one thing changed at a time. The bench gives him that, and gives it to you. It is not a test of you as a person. It measures one sitting, on one device, in one room, and the most useful thing it teaches is how much a short measurement can and cannot say.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">measured = timed from your own presses</span>
+      <span class="pill">modelled = a stated rule applied to 200 synthetic people</span>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Not medical advice, and not a diagnostic test.</strong> A go/no-go task in a browser cannot tell you whether you have an attention disorder, and nothing on this page should be read that way. Your results stay in this browser (local storage) and are never sent anywhere. If concentration problems are persistent or affect your work or life, talk to a doctor.</p>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> Your own reaction time, variability and errors in four conditions, a rule for reading an error count only next to speed, the modelled shape of drift over 3, 10 and 20 minutes, what unanswered banners cost in the model, and why a 30-second test of attention measures nobody.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the go/no-go task and its four readings</span>
+      <h2>How a digit becomes four numbers</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">The task follows the timing used by Paul Seli and colleagues in 2013: each digit shows for 250 milliseconds, then a circled x covers it for 900 milliseconds, so a trial lasts 1150 milliseconds whether you press or not. Digits come in shuffled runs of nine, so one trial in nine is a 3, and they appear in five sizes so you cannot respond to shape alone. Press for every digit that is not a 3; hold back on the 3.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three trials on a time line, each 1150 milliseconds: a digit for 250 milliseconds then a circled x mask for 900. Trial 7 is a go trial with a press 380 milliseconds after onset: reaction time. Trial 3 is a no-go trial with a press: a commission error, highlighted. Trial 5 is a go trial with no press: an omission error. On the right, the four readings: mean reaction time on go trials, its coefficient of variation, commission errors as presses on a 3, and omission errors as missed presses.">
+        <defs>
+          <filter id="f4aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="43" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="f4aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B5C78" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="f4aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#15232D" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .f4aH { font: 800 12px Inter, sans-serif; fill: #15232D; }
+          .f4aL { font: 600 12px Inter, sans-serif; fill: #15232D; }
+          .f4aS { font: 400 11px Inter, sans-serif; fill: #4D5F6B; }
+          .f4aB { font: 800 11px Inter, sans-serif; fill: #6A3F00; }
+          .f4aA { font: 700 11px Inter, sans-serif; fill: #2B5C78; }
+          .f4aD { font: 800 22px Inter, sans-serif; fill: #15232D; }
+          .f4aN { font: 400 12px Inter, sans-serif; fill: #4D5F6B; }
+        </style>
+
+        <text class="f4aH" x="30" y="26">ONE TRIAL EVERY 1150 MS, AND WHAT EACH ONE CAN BECOME</text>
+
+        <g filter="url(#f4aSk)" fill="none" stroke="#15232D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="70" width="50" height="60" rx="6" fill="#FFFFFF"/>
+          <rect x="90" y="70" width="130" height="60" rx="6" fill="url(#f4aHc)"/>
+          <rect x="230" y="70" width="50" height="60" rx="6" fill="#FDF3DF" stroke="#9A5B00"/>
+          <rect x="280" y="70" width="130" height="60" rx="6" fill="url(#f4aHc)"/>
+          <rect x="420" y="70" width="50" height="60" rx="6" fill="#FFFFFF"/>
+          <rect x="470" y="70" width="130" height="60" rx="6" fill="url(#f4aHc)"/>
+          <path d="M40 150 L606 150" marker-end="url(#f4aAr)"/>
+          <path d="M40 162 L40 174 L220 174 L220 162" stroke="#2B5C78"/>
+          <path d="M95 60 L95 140" stroke="#2B5C78" stroke-dasharray="4 3"/>
+          <path d="M294 60 L294 140" stroke="#9A5B00" stroke-width="2.5"/>
+        </g>
+
+        <text class="f4aD" x="65" y="108" text-anchor="middle">7</text>
+        <text class="f4aD" x="255" y="108" text-anchor="middle">3</text>
+        <text class="f4aD" x="445" y="108" text-anchor="middle">5</text>
+        <text class="f4aA" x="99" y="56">press at 380 ms</text>
+        <text class="f4aB" x="300" y="56">press on a 3</text>
+        <text class="f4aS" x="535" y="56" text-anchor="middle">no press</text>
+        <text class="f4aS" x="130" y="194" text-anchor="middle">250 ms digit + 900 ms mask</text>
+        <text class="f4aL" x="130" y="216" text-anchor="middle">go: reaction time</text>
+        <text class="f4aB" x="320" y="216" text-anchor="middle">no-go: commission error</text>
+        <text class="f4aL" x="510" y="216" text-anchor="middle">go: omission error</text>
+        <text class="f4aS" x="600" y="168" text-anchor="end">time</text>
+
+        <text class="f4aH" x="650" y="70">FOUR READINGS PER BLOCK</text>
+        <text class="f4aL" x="650" y="96">mean RT</text>
+        <text class="f4aS" x="650" y="112">go trials you pressed</text>
+        <text class="f4aL" x="650" y="138">RT variability (CV)</text>
+        <text class="f4aS" x="650" y="154">SD divided by the mean</text>
+        <text class="f4aL" x="650" y="180">commission errors</text>
+        <text class="f4aS" x="650" y="196">presses on a 3</text>
+        <text class="f4aL" x="650" y="222">omission errors</text>
+        <text class="f4aS" x="650" y="238">go trials with no press</text>
+
+        <text class="f4aN" x="30" y="276">Timing as in Seli et al. 2013: one trial in nine is a 3, digits in five sizes, the clock never waits for you.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the 3 is rare and the rhythm is steady, so the hand learns to press before the mind has checked; that slip is what the task catches</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What each reading means<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Commission errors</strong> are the headline reading of the task: pressing on a 3 because the rhythm carried your hand. Robertson and colleagues designed the task to produce exactly these "slips of action", and found that, in 75 healthy controls and 34 people with brain injury, the slips tracked self- and informant-reported everyday attention failures. They also found that false presses were preceded by a shortening of reaction times: the hand speeds up just before it slips.</p>
+        <p><strong>Mean reaction time</strong> on the go trials is how fast you pressed. <strong>RT variability</strong>, the standard deviation divided by the mean, is how uneven your rhythm was; Seli, Cheyne and Smilek found response variability rose in the trials before people reported their mind had wandered. <strong>Omission errors</strong> are go trials you missed altogether, the reading that rises when attention lapses completely rather than running on autopilot.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Never read errors without speed<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Seli, Jonker, Cheyne and Smilek (2013) showed that the task is open to a speed-accuracy trade-off. In their 108 participants, error rate and reaction time correlated at r = 0.77: people who pressed slower made fewer commission errors. When people were told to go slowly, they made 16 percent fewer errors, and the whole difference was accounted for by their slower pressing.</p>
+        <p>That is why the bench prints mean reaction time next to every error count, and why its notes compare speed whenever errors change. If your banner block shows fewer errors and a slower reaction time, you did not necessarily attend better; you may have pressed more cautiously. Part 4 comes back to what this means for any attention test you meet at work.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="bench">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · the bench, part 1</span>
+      <h2>Four steps, measured on you</h2>
+      <span class="tag demo">★ 16 min · everyone runs it</span>
+    </div>
+    <p class="lede">Each block is 3 minutes: 157 trials, of which 17 or 18 are a 3. Run the steps in order. Use the space bar on a keyboard or the big button on a touch screen, and keep the same hand and posture throughout so the blocks are comparable. During block 2, chat banners from Tomas's invented team slide in at the top of the task; do not answer them, keep pressing. The break is real time: look at something far away, stand up if you can.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The four steps in a row: block 1 baseline, block 2 with banners on, a 2-minute break, block 3 with banners muted. Under them, two brackets show what each comparison isolates. Block 2 against block 1 isolates the banners, but block 2 also has more time on task. Block 3 against block 2 removes the banners, but also follows a break and more practice, so it mixes changes.">
+        <defs>
+          <filter id="f4bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <marker id="f4bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#15232D" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .f4bH { font: 800 12px Inter, sans-serif; fill: #15232D; }
+          .f4bL { font: 600 12px Inter, sans-serif; fill: #15232D; }
+          .f4bS { font: 400 11px Inter, sans-serif; fill: #4D5F6B; }
+          .f4bB { font: 800 11px Inter, sans-serif; fill: #6A3F00; }
+          .f4bA { font: 700 11px Inter, sans-serif; fill: #2B5C78; }
+          .f4bN { font: 400 12px Inter, sans-serif; fill: #4D5F6B; }
+        </style>
+
+        <text class="f4bH" x="30" y="26">FOUR STEPS, AND WHAT EACH COMPARISON CAN AND CANNOT ISOLATE</text>
+
+        <g filter="url(#f4bSk)" fill="none" stroke="#15232D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="50" width="180" height="70" rx="10" transform="rotate(-0.6 130 85)" fill="#FFFFFF"/>
+          <rect x="250" y="50" width="180" height="70" rx="10" transform="rotate(0.5 340 85)" fill="#FDF3DF" stroke="#9A5B00"/>
+          <rect x="460" y="50" width="180" height="70" rx="10" transform="rotate(-0.5 550 85)" fill="#EEF4F8"/>
+          <rect x="670" y="50" width="180" height="70" rx="10" transform="rotate(0.6 760 85)" fill="#FFFFFF"/>
+          <path d="M222 85 L244 85" marker-end="url(#f4bAr)"/>
+          <path d="M432 85 L454 85" marker-end="url(#f4bAr)"/>
+          <path d="M642 85 L664 85" marker-end="url(#f4bAr)"/>
+          <rect x="262" y="58" width="150" height="18" rx="6" fill="#FFFFFF" stroke="#9A5B00" stroke-width="1.4"/>
+          <path d="M130 140 L130 152 L340 152 L340 140" stroke="#2B5C78"/>
+          <path d="M340 196 L340 208 L760 208 L760 196" stroke="#2B5C78"/>
+        </g>
+
+        <text class="f4bS" x="337" y="71" text-anchor="middle">Priya: nightly load late?</text>
+        <text class="f4bL" x="130" y="94" text-anchor="middle">Block 1 · baseline</text>
+        <text class="f4bS" x="130" y="110" text-anchor="middle">3 min, nothing else</text>
+        <text class="f4bL" x="340" y="98" text-anchor="middle">Block 2 · banners on</text>
+        <text class="f4bS" x="340" y="112" text-anchor="middle">never answered</text>
+        <text class="f4bL" x="550" y="90" text-anchor="middle">Break · 2 min</text>
+        <text class="f4bS" x="550" y="106" text-anchor="middle">look far away, stand</text>
+        <text class="f4bL" x="760" y="90" text-anchor="middle">Block 3 · muted</text>
+        <text class="f4bS" x="760" y="106" text-anchor="middle">messages arrive unseen</text>
+        <text class="f4bA" x="235" y="172" text-anchor="middle">2 vs 1: the banners</text>
+        <text class="f4bS" x="235" y="188" text-anchor="middle">plus 3 more minutes on task</text>
+        <text class="f4bA" x="550" y="228" text-anchor="middle">3 vs 2: banners gone</text>
+        <text class="f4bB" x="550" y="244" text-anchor="middle">plus a break and more practice: two changes at once</text>
+
+        <text class="f4bN" x="30" y="268">One person, one order: every comparison carries a second change. The modelled pool below holds the rest constant.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - a fixed order is easy to run and impossible to read cleanly; the pool in Part 2 changes one thing at a time</figcaption>
+    </figure>
+
+    <div id="fo-learner"></div>
+
+    <div class="callout tip">
+      <p><strong>Read your table in this order.</strong> Speed first, then errors, then variability. If two blocks differ by two commission errors or fewer out of 17, chance alone produces that, so say "no clear difference". If an error count fell and reaction time rose, you may have traded speed for accuracy. Then switch the block length to 30 seconds and run block 1 again: three or so no-go trials, and one slip moves the rate by more than 30 points. That is the break button, on you.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the modelled pool and time on task</span>
+      <h2>What one block cannot show: drift over time</h2>
+      <span class="tag concept">8 min live</span>
+    </div>
+    <p class="lede">Your three blocks are three minutes each, in a fixed order, from one person. To see how performance drifts with time on task, and what banners add when nothing else changes, the bench runs a modelled pool: 200 synthetic participants, each with a starting speed, variability and error tendency, drifting with minutes on task by a rule printed on the widget. It is a model, fitted to nobody; only the direction of each change is the claim. An independent Python run reproduces every number below exactly.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two modelled bar charts. Left: drift in commission rate from the first fifth to the last fifth of the task, by block length: 3 minutes 4.3 points, 10 minutes 8.4, 20 minutes 10.9. Right: commission rate in the last fifth of 10 minutes of task: straight through 31.4 percent, with chat banners on 35.8 percent, split into two 5-minute blocks with a 2-minute break 28.6 percent.">
+        <defs>
+          <filter id="f4cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="f4cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B5C78" stroke-width="1" opacity=".5"/></pattern>
+        </defs>
+        <style>
+          .f4cH { font: 800 12px Inter, sans-serif; fill: #15232D; }
+          .f4cL { font: 600 12px Inter, sans-serif; fill: #15232D; }
+          .f4cS { font: 400 11px Inter, sans-serif; fill: #4D5F6B; }
+          .f4cR { font: 800 11px Inter, sans-serif; fill: #991B1B; }
+          .f4cV { font: 800 13px Inter, sans-serif; fill: #1B3E54; }
+          .f4cN { font: 400 12px Inter, sans-serif; fill: #4D5F6B; }
+        </style>
+
+        <text class="f4cH" x="30" y="26">MODELLED: 200 SYNTHETIC PARTICIPANTS, SAME TASK</text>
+        <text class="f4cL" x="40" y="54">Drift, first fifth to last fifth</text>
+        <text class="f4cL" x="470" y="54">Last fifth of 10 minutes on task</text>
+
+        <g filter="url(#f4cSk)" fill="none" stroke="#15232D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="140" y="72" width="94" height="30" rx="4" fill="url(#f4cHc)"/>
+          <rect x="140" y="124" width="185" height="30" rx="4" fill="url(#f4cHc)"/>
+          <rect x="140" y="176" width="240" height="30" rx="4" fill="#2B5C78"/>
+          <rect x="600" y="72" width="157" height="30" rx="4" fill="#EEF4F8" stroke="#2B5C78"/>
+          <rect x="600" y="124" width="179" height="30" rx="4" fill="#FEF2F2" stroke="#991B1B"/>
+          <rect x="600" y="176" width="143" height="30" rx="4" fill="#FDF3DF" stroke="#9A5B00"/>
+        </g>
+
+        <text class="f4cL" x="130" y="92" text-anchor="end">3 min</text>
+        <text class="f4cL" x="130" y="144" text-anchor="end">10 min</text>
+        <text class="f4cL" x="130" y="196" text-anchor="end">20 min</text>
+        <text class="f4cV" x="244" y="93">+4.3</text>
+        <text class="f4cV" x="335" y="145">+8.4</text>
+        <text class="f4cV" x="390" y="197">+10.9</text>
+        <text class="f4cS" x="140" y="232">percentage points of presses on a 3</text>
+
+        <text class="f4cL" x="590" y="86" text-anchor="end">straight through</text>
+        <text class="f4cS" x="590" y="100" text-anchor="end">no banners</text>
+        <text class="f4cL" x="590" y="138" text-anchor="end">banners on</text>
+        <text class="f4cR" x="590" y="152" text-anchor="end">anti-lever</text>
+        <text class="f4cL" x="590" y="190" text-anchor="end">5 + break + 5</text>
+        <text class="f4cS" x="590" y="204" text-anchor="end">2-minute break</text>
+        <text class="f4cV" x="767" y="93">31.4%</text>
+        <text class="f4cV" x="789" y="145">35.8%</text>
+        <text class="f4cV" x="753" y="197">28.6%</text>
+        <text class="f4cS" x="600" y="232">commission rate, last fifth</text>
+
+        <text class="f4cN" x="30" y="282">Modelled with illustrative settings: the directions are the claim, the sizes are not.</text>
+        <text class="f4cN" x="30" y="304">Drift saturates (f = s t / (t + 6)), so doubling 10 minutes to 20 adds less than going from 3 to 10.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - longer blocks drift more, banners push the end of the block up, and a break pulls it down for the same ten minutes of task</figcaption>
+    </figure>
+
+    <div id="fo-model" data-preset="b10"></div>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading the pool<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Start on the 10-minute block: commission rate 23.0 percent in the first fifth of trials and 31.4 percent in the last, a drift of 8.4 points, with RT variability rising from 0.22 to 0.25. The 3-minute block, the length you ran, drifts by 4.3 points (20.9 to 25.3 percent); 20 minutes drifts by 10.9 (24.5 to 35.5 percent). That shape, a decline over time on task that is steepest early, is the vigilance decrement session 3 described; here it is built into the model on purpose, so you can see what a measurement of it looks like.</p>
+        <p>Then the break: two 5-minute blocks with a 2-minute break between them, the same ten minutes of task. The model gives back most of the drift at the break, so the last fifth ends at 28.6 percent against 31.4 percent straight through. Session 6 builds a focus block around exactly this, and session 3 explains why the reason a break helps is still argued over.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The rule behind the pool<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Each synthetic person gets a starting reaction time, variability, commission tendency and a susceptibility s, drawn with a fixed seed. With t minutes on task, drift is f = s t / (t + 6). On a 3, the chance of pressing is the starting tendency plus 0.30 f; a missed press on other digits starts at 1 percent and rises with f; reaction time speeds slightly and its variability grows with f. A banner disrupts the next four trials. A 2-minute break gives back 80 percent of the time on task. Every setting runs twice with fresh randomness.</p>
+        <p>None of these settings is fitted to data. They were chosen so the pool behaves in the directions the vigilance literature describes and so the anti-lever and the break button have something to show. Use the pool to compare settings with each other, never to predict your own numbers.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the anti-lever and the break button</span>
+      <h2>What unanswered banners cost, and when a test measures nobody</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Two settings on the pool exist to make the bench report something worse. One is a habit most offices treat as harmless. The other breaks the measurement itself, which is how you know the measurement was doing something before.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agreement between two runs of the same 200 modelled people, as bars, by task length: 30 seconds with about 3 no-go trials each, r 0.11; 3 minutes with about 17, r 0.41; 10 minutes with about 57, r 0.73; 20 minutes with about 115, r 0.85. The 30-second bar is red: the break button. Beside it, the drift built into the model for 30 seconds is 1.0 point while the measure reports 4.6.">
+        <defs>
+          <filter id="f4dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="f4dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B5C78" stroke-width="1" opacity=".5"/></pattern>
+        </defs>
+        <style>
+          .f4dH { font: 800 12px Inter, sans-serif; fill: #15232D; }
+          .f4dL { font: 600 12px Inter, sans-serif; fill: #15232D; }
+          .f4dS { font: 400 11px Inter, sans-serif; fill: #4D5F6B; }
+          .f4dR { font: 800 11px Inter, sans-serif; fill: #991B1B; }
+          .f4dV { font: 800 13px Inter, sans-serif; fill: #1B3E54; }
+          .f4dN { font: 400 12px Inter, sans-serif; fill: #4D5F6B; }
+        </style>
+
+        <text class="f4dH" x="30" y="26">SAME 200 MODELLED PEOPLE, RUN TWICE: DO THE TWO RUNS AGREE?</text>
+
+        <g filter="url(#f4dSk)" fill="none" stroke="#15232D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="200" y="56" width="44" height="30" rx="4" fill="#FEF2F2" stroke="#991B1B"/>
+          <rect x="200" y="108" width="164" height="30" rx="4" fill="url(#f4dHc)"/>
+          <rect x="200" y="160" width="292" height="30" rx="4" fill="url(#f4dHc)"/>
+          <rect x="200" y="212" width="340" height="30" rx="4" fill="#2B5C78"/>
+          <rect x="640" y="70" width="200" height="120" rx="10" transform="rotate(0.6 740 130)" fill="#FFFFFF" stroke="#991B1B"/>
+        </g>
+
+        <text class="f4dL" x="190" y="70" text-anchor="end">30 seconds</text>
+        <text class="f4dR" x="190" y="84" text-anchor="end">break button, ~3 no-go</text>
+        <text class="f4dL" x="190" y="122" text-anchor="end">3 minutes</text>
+        <text class="f4dS" x="190" y="136" text-anchor="end">~17 no-go</text>
+        <text class="f4dL" x="190" y="174" text-anchor="end">10 minutes</text>
+        <text class="f4dS" x="190" y="188" text-anchor="end">~57 no-go</text>
+        <text class="f4dL" x="190" y="226" text-anchor="end">20 minutes</text>
+        <text class="f4dS" x="190" y="240" text-anchor="end">~115 no-go</text>
+        <text class="f4dV" x="254" y="77">r = 0.11</text>
+        <text class="f4dV" x="374" y="129">r = 0.41</text>
+        <text class="f4dV" x="502" y="181">r = 0.73</text>
+        <text class="f4dV" x="550" y="233">r = 0.85</text>
+
+        <text class="f4dR" x="656" y="96">30 SECONDS</text>
+        <text class="f4dL" x="656" y="120">built-in drift: 1.0</text>
+        <text class="f4dL" x="656" y="140">measured drift: 4.6</text>
+        <text class="f4dS" x="656" y="162">the gap is noise, and</text>
+        <text class="f4dS" x="656" y="178">it changes every run</text>
+
+        <text class="f4dN" x="30" y="274">Pearson r between two seeded runs of each person's commission rate. Modelled; the ordering is the claim.</text>
+        <text class="f4dN" x="30" y="296">A 3-minute block, the length you ran, agrees with itself at only 0.41 in the model.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - fewer no-go trials, less agreement; at 30 seconds the measure ranks the same people almost at random</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The anti-lever: banners on, never answered<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>"I leave chat open but I don't answer it" is how many people describe their discipline. <strong>The model:</strong> a banner every 12 to 28 seconds disrupts the next four trials, raising the chance of a slip and the unevenness of responses. Over 10 minutes the last-fifth commission rate rises from 31.4 to 35.8 percent, the first fifth from 23.0 to 26.6, and missed presses in the last fifth from 3.8 to 6.1 percent. No banner was ever answered.</p>
+        <p><strong>The honest nuance:</strong> the size is a setting, not a finding. What the model encodes is a direction that research supports: Stothart, Mitchum and Yehnert (2015) found that notifications alone, with no interaction with the phone, disrupted performance on an attention-demanding task, comparable in size to actively using the phone, and proposed that notifications prompt task-irrelevant thought. Session 5 reads that study next to the phone-presence studies that did not replicate.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The break button: a 30-second task<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A bench that can only produce sensible numbers is measuring nothing. Shorten the task to 30 seconds: 26 trials, about three of them a 3. In that time the model builds in a drift of only 1.0 point, yet the measure reports 4.6, because with half a no-go trial in each window the rate jumps on single presses. Run the same 200 people twice and their commission rates agree at r = 0.11, against 0.41 for 3 minutes, 0.73 for 10 and 0.85 for 20.</p>
+        <p>The decrement vanishes because there is no time on task for it to happen in, and the measure becomes useless because there are too few chances to slip. Both failures show up in the quick "attention tests" that circulate online. Try it on yourself with the block-length switch above: run block 1 at 30 seconds twice and compare.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers what the task can and cannot tell you</span>
+      <h2>A good instrument, read narrowly</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The task has a respectable record: Robertson and colleagues found its slips tracked everyday attention failures and other sustained-attention tests, not other kinds of attention. It also has a known weakness, the speed-accuracy trade-off, and a hard limit, the number of no-go trials. Reading it well means holding all three.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An illustration, no data: commission errors on the vertical axis against mean reaction time on the horizontal. A dashed trade-off curve falls from fast and error-prone to slow and accurate. Two people sit on the same curve: a fast presser with many slips and a cautious presser with few. A third person sits above the curve, more errors at the same speed, highlighted: the only position that suggests worse attention rather than a different strategy.">
+        <defs>
+          <filter id="f4eSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="61" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <marker id="f4eAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#15232D" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .f4eH { font: 800 12px Inter, sans-serif; fill: #15232D; }
+          .f4eL { font: 600 12px Inter, sans-serif; fill: #15232D; }
+          .f4eS { font: 400 11px Inter, sans-serif; fill: #4D5F6B; }
+          .f4eB { font: 800 11px Inter, sans-serif; fill: #6A3F00; }
+          .f4eA { font: 700 11px Inter, sans-serif; fill: #2B5C78; }
+          .f4eN { font: 400 12px Inter, sans-serif; fill: #4D5F6B; }
+        </style>
+
+        <text class="f4eH" x="30" y="26">SAME ATTENTION, DIFFERENT STRATEGY (ILLUSTRATION, NO DATA)</text>
+
+        <g filter="url(#f4eSk)" fill="none" stroke="#15232D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M90 290 L90 50" marker-end="url(#f4eAr)"/>
+          <path d="M90 290 L820 290" marker-end="url(#f4eAr)"/>
+          <path d="M140 80 C260 150 420 230 780 268" stroke="#2B5C78" stroke-dasharray="6 4"/>
+          <circle cx="200" cy="114" r="7" fill="#FFFFFF"/>
+          <circle cx="680" cy="262" r="7" fill="#FFFFFF"/>
+          <circle cx="430" cy="128" r="8" fill="#E0A030" stroke="#9A5B00"/>
+        </g>
+
+        <text class="f4eA" x="455" y="318" text-anchor="middle">mean reaction time: faster to the left, slower to the right</text>
+        <text class="f4eA" x="40" y="200" transform="rotate(-90 40 200)" text-anchor="start">commission errors</text>
+        <text class="f4eL" x="216" y="94">fast presser</text>
+        <text class="f4eS" x="216" y="108">many slips, same curve</text>
+        <text class="f4eL" x="690" y="230">cautious presser</text>
+        <text class="f4eS" x="690" y="246">few slips, same curve</text>
+        <text class="f4eB" x="446" y="118">more slips at the same speed</text>
+        <text class="f4eS" x="446" y="134">the reading that points at attention</text>
+        <text class="f4eS" x="330" y="230" text-anchor="middle">trade-off curve</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - moving along the curve is a choice of pace; only moving off it, more errors at the same speed, says something about attention</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Three rules for any attention test<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Speed next to errors.</strong> Seli and colleagues' r = 0.77 between error rate and reaction time means an error count alone mixes attention with pace. Compare blocks at similar speeds, or say plainly that pace changed.</p>
+        <p><strong>Enough chances to fail.</strong> A rate built on 17 no-go trials moves about 6 points per slip; on 3 it moves more than 30. The model's run-twice agreement, 0.41 at 3 minutes and 0.11 at 30 seconds, is the same point at the level of a group.</p>
+        <p><strong>One sitting is one sitting.</strong> Sleep, caffeine, the time of day, the device and practice all move these numbers. A difference between your blocks tonight is a fact about tonight. That is why session 6 judges a focus routine over two weeks, not one afternoon.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why no "normal range" is printed here<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Published studies report group averages for their own versions of the task, with their own timing, number of trials, instructions, screens and participants. None of those averages was read at source for this page, and a number from a different version would invite exactly the comparison the bench warns against: you against a stranger, on a different instrument, on a different day. Compare your blocks with each other; that comparison holds the person, the device and the evening constant.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The five-minute focus quiz.</strong> Apps and articles offer quick "attention tests" that return a score in under a minute or two. Read them with this page's three rules: is speed shown next to errors, how many chances to fail were there, and was it one sitting? A 30-second test with a handful of targets will rank the same person differently each time, which the break button showed on 200 modelled people.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 5</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Run the four steps on another day</strong>, at a different time. Write down which differences between blocks held both times and which flipped.</li>
+      <li><strong>Run block 1 at 30 seconds twice.</strong> Note how far the commission rate moved between two runs of the same thing.</li>
+      <li><strong>Find one attention test online</strong> and score it on the three rules from Part 4.</li>
+      <li><strong>Note what your block 2 felt like.</strong> Did the banners pull your eyes even though you never answered? Bring that to session 5.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 4 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · In your banner block you made 2 fewer commission errors than at baseline, and your mean reaction time was 60 ms slower. What is the best reading?</p>
+      <button class="qopt" type="button">A · The banners improved your attention</button>
+      <button class="qopt" type="button">B · No clear difference in attention: a gap of two errors out of about 17 is within chance, and you also pressed more slowly, which by itself tends to reduce errors</button>
+      <button class="qopt" type="button">C · Your attention got worse, because you were slower</button>
+      <button class="qopt" type="button">D · The bench is broken, because banners should always increase errors</button>
+      <p class="qwhy">Seli and colleagues found errors and reaction time correlated at r = 0.77, and slowing down cut errors by 16 percent. With 17 no-go trials, two errors is noise. The honest reading is "no clear difference, and I changed my pace".</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · On the modelled pool, a 30-second task shows a measured drift of 4.6 points while the model only built in 1.0, and two runs of the same people agree at r = 0.11. What does that show?</p>
+      <button class="qopt" type="button">A · Short tasks reveal hidden drift that longer tasks miss</button>
+      <button class="qopt" type="button">B · Attention drifts faster in the first 30 seconds than anywhere else</button>
+      <button class="qopt" type="button">C · The model is wrong and should be refitted</button>
+      <button class="qopt" type="button">D · With about three no-go trials there is almost no time on task for drift and too few chances to slip, so the reading is mostly noise and ranks people almost at random</button>
+      <p class="qwhy">That is the break button working as intended: it proves the bench measures something at 3 minutes and more (agreement 0.41, 0.73, 0.85) by showing the measure falling apart when the conditions for measuring are removed.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Over 10 modelled minutes, unanswered banners raise the last-fifth commission rate from 31.4 to 35.8 percent. How should that be stated?</p>
+      <button class="qopt" type="button">A · In a stated model, unanswered banners pushed slips up; the direction matches Stothart and colleagues' finding that notifications alone disrupted an attention task, and the size is a setting, not a measurement</button>
+      <button class="qopt" type="button">B · Banners raise your errors by 4.4 points</button>
+      <button class="qopt" type="button">C · Banners only matter if you answer them</button>
+      <button class="qopt" type="button">D · The pool measured 200 real office workers</button>
+      <p class="qwhy">The pool is modelled and fitted to nobody: B turns a setting into a personal prediction and D mislabels a model as a measurement. C is the habit the anti-lever exists to question.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Robertson, Manly, Andrade, Baddeley and Yiend (1997), Neuropsychologia</span><span class="note">The SART: withholding to rare targets, slips tracking everyday attention failures in 75 controls and 34 people with brain injury, RT shortening before false presses; read at source (abstract, institutional pages)</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Seli, Jonker, Cheyne and Smilek (2013), Frontiers in Psychology</span><span class="note">Task timing (250 + 900 ms, runs of nine, five sizes) and the speed-accuracy trade-off, r = 0.77, 16 percent fewer errors when slowed; full text read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Seli, Cheyne and Smilek (2013); Stothart, Mitchum and Yehnert (2015)</span><span class="note">Response variability before mind-wandering reports; notifications alone disrupting an attention task; read at source (abstracts)</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The modelled pool, the anti-lever and the break button</span><span class="note">Modelled by rules printed on the widget, fitted to nobody; node and an independent Python run agree exactly; only directions are claimed</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Tomas's team and the banner messages</span><span class="note">Constructed for teaching</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Four readings</b><span>Mean RT, RT variability (CV), commission errors on the 3, omission errors on the rest.</span></div>
+      <div class="cheat-item"><b>Speed next to errors</b><span>Errors and RT correlated at r = 0.77 (Seli et al. 2013): slower pressing buys fewer slips.</span></div>
+      <div class="cheat-item"><b>Two errors is noise</b><span>Out of 17 no-go trials, a gap of two or fewer is chance.</span></div>
+      <div class="cheat-item"><b>Drift grows with time</b><span>Modelled: +4.3 points at 3 minutes, +8.4 at 10, +10.9 at 20.</span></div>
+      <div class="cheat-item"><b>Unanswered still costs</b><span>Modelled: banners take the end of 10 minutes from 31.4% to 35.8%; a break takes it to 28.6%.</span></div>
+      <div class="cheat-item"><b>Too short measures nobody</b><span>Modelled run-twice agreement: 0.11 at 30 seconds, 0.41 at 3 minutes, 0.85 at 20.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The banners cost something even unanswered, in the model and in Stothart's lab. Session 5 moves from the screen to the room: what the phone does on the desk and in the bag, which famous phone finding failed to replicate, what a week with notifications off changed, and how Tomas redesigns his desk and his chat settings.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-focus-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="03-why-focus-fades.html">← Prev: Why focus fades over an hour</a> &nbsp;·&nbsp; <a href="05-the-room-and-the-phone.html">Next: Designing the room and the phone →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/fo-live.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
